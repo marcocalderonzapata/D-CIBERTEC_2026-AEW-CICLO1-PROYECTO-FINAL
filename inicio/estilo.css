@@ -1,0 +1,676 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #202020;
+    background-color: #ffffff;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+select,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* ==============================
+   ENCABEZADO
+============================== */
+
+.header {
+    width: 100%;
+    min-height: 90px;
+    padding: 18px 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    border-bottom: 1px solid #eeeeee;
+    background-color: #ffffff;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    width: 220px;
+    max-height: 120px;
+    object-fit: contain;
+    display: block;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+}
+
+.menu a {
+    position: relative;
+    padding: 10px 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+
+    width: 0;
+    height: 2px;
+
+    background-color: #d89cac;
+    transition: width 0.3s ease;
+}
+
+.menu a:hover,
+.menu a.activo {
+    color: #d89cac;
+}
+
+.menu a:hover::after,
+.menu a.activo::after {
+    width: 100%;
+}
+
+.acciones {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.acciones button {
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    color: #202020;
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.acciones button:hover {
+    color: #d89cac;
+    transform: translateY(-2px);
+}
+
+h2 {
+    text-align: center;
+    padding-top: 15px;
+}
+/*  banner*/
+
+.baner {
+    position: relative; /* Clave para posicionar flechas y puntos adentro */
+    width: 100%;
+    height: 80vh;
+    min-height: 500px;
+    background-image: url('imagenes/banner1.jpeg'); /* Tu primera imagen */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: background-image 0.5s ease-in-out; /* Transición suave al cambiar */
+}
+.badge {
+    display: inline-block;
+    background-color: #f0f0f0;
+    color: #333;              
+    padding: 5px 15px;         
+    border-radius: 50px;      
+    font-size: 12px;           
+    font-weight: 700;          
+    text-transform: uppercase;
+    letter-spacing: 1.5px;   
+    margin-bottom: 15px;       
+}
+/* ESTILOS DE LAS FLECHAS */
+.flecha {
+    position: absolute; /* Las hace flotar encima del banner */
+    top: 50%;
+    transform: translateY(-50%); /* Las centra perfectamente en vertical */
+    background-color: rgba(255, 255, 255, 0.6); /* Fondo blanco transparente */
+    color: #000;
+    border: none;
+    font-size: 25px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 50%; /* Botones redondos */
+    transition: background-color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flecha:hover {
+    background-color: rgba(255, 255, 255, 1); /* Se hace sólido al pasar el mouse */
+}
+
+.flecha-izq {
+    left: 20px; /* Separación del borde izquierdo */
+}
+
+.flecha-der {
+    right: 20px; /* Separación del borde derecho */
+}
+
+/* ESTILOS DE LOS PUNTOS INFERIORES */
+.puntos {
+    position: absolute;
+    bottom: 20px; /* Flotan en la parte de abajo */
+    display: flex;
+    gap: 15px;
+}
+
+.punto {
+    width: 15px;
+    height: 15px;
+    border: 2px solid #000; /* Borde negro (como en tu boceto) */
+    border-radius: 50%; /* Hace que sean círculos */
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.punto.activo {
+    background-color: #000; /* El punto actual se rellena de negro */
+}
+/* CONTENEDOR DE LOS BOTONES (CENTRADOS) */
+.banertext{
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 50px 20px;
+
+}
+.banerbotones {
+    display: flex;
+    flex-direction: row;          
+    gap: 20px;                     
+    margin-top: 25px; /* Un poco más de espacio con el texto de arriba */
+    justify-content: center; /* Asegura que se alineen al centro */
+}
+
+/* ESTILOS BASE PARA AMBOS BOTONES */
+.banerbotones a {
+    display: inline-block;
+    padding: 14px 35px; /* Tamaño ideal para hacer clic */
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 6px; /* ¡Clave! Esto le da las esquinas redondeadas del boceto */
+    transition: all 0.2s ease; /* Hace que el cambio de color al pasar el mouse sea suave */
+}
+
+/* BOTÓN NEGRO (Ver ropa) */
+.btnnegro {
+    background-color: #000000; /* Negro sólido como en tu imagen */
+    color: #ffffff;
+    border: 1px solid #000000;
+}
+
+.btnnegro:hover {
+    background-color: #222222; /* Un gris muy oscuro al pasar el mouse */
+    border-color: #222222;
+}
+
+/* BOTÓN BLANCO (Ver accesorios) */
+.btnblanco {
+    background-color: #ffffff; /* Blanco sólido */
+    color: #000000;
+    border: 1px solid #000000; /* Línea negra exterior */
+}
+
+.btnblanco:hover {
+    background-color: #f5f5f5; /* Gris claro sutil al pasar el mouse */
+}
+
+.vermascaja {
+    display: flex;
+    justify-content: flex-end; /* Esto es lo que empuja el contenido a la derecha */
+    width: 100%;     
+    padding-bottom: 8px;        /* Asegura que la caja ocupe todo el ancho */
+}
+
+.vermas{
+    /* En lugar de float, si quieres moverlo a la derecha, 
+       es mejor manejarlo desde el contenedor padre con justify-content: flex-end */
+    display: inline-flex;     /* Esto permite alinear texto + icono */
+    align-items: center;      /* ALINEACIÓN VERTICAL PERFECTA */
+    gap: 8px;                 /* Espacio entre el texto y la flecha */
+    
+    justify-content: flex-end;
+
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: lowercase;
+    border: none;             
+    cursor: pointer;          
+    transition: background 0.3s ease; 
+}
+
+/* Efecto hover profesional */
+.vermas:hover {
+    background-color: #333;
+    }
+
+a{
+    text-decoration: none;
+}
+
+.catalotext, .cataloitem{
+    display: flex;
+    flex-direction: column;
+}
+.catalotext{
+    padding: 20px;
+    text-align: left;
+}
+.catalogo h2{
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.catalogoimg {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 30px;
+}
+
+.cataloitem{
+    height: auto;
+    width: 200px;
+    background-color: #f0e9e4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    font-size: 14px;}
+    .catalogocard {
+    flex: 1 1 250px;
+    max-width: 280px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    transition: transform 0.3s ease;}
+
+
+/* SECCIÓN TESTIMONIOS         */
+
+/* Contenedor principal que agrupa flechas y la tarjeta */
+.contenedor-testimonios {
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    gap: 30px; 
+    padding: 60px 20px;
+    max-width: 1000px; 
+    margin: 0 auto; 
+}
+
+/* La tarjeta que tiene la imagen y el texto */
+.tarjeta-testimonio {
+    display: flex;
+    align-items: center;
+    gap: 50px; 
+    width: 100%;
+}
+
+/* Caja de la foto */
+.imagen-testimonio {
+    flex: 1; /* Toma el 50% del espacio disponible */
+    height: 350px;
+    border: 2px solid #000; /* Borde negro como en tu boceto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+}
+
+/* Caja del texto */
+.texto-testimonio {
+    flex: 1; /* Toma el otro 50% del espacio disponible */
+    display: flex;
+    flex-direction: column;
+}
+
+.texto-testimonio h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.texto-testimonio p {
+    font-size: 1rem;
+    line-height: 1.6; /* Hace el texto más fácil de leer */
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.texto-testimonio .autor {
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+/* Estilo para las flechas laterales sin fondo */
+.flecha-testimonio {
+    background: transparent;
+    border: none;
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s;
+}
+
+.flecha-testimonio:hover {
+    color: #000; /* Se pone más oscuro al pasar el mouse */
+}
+
+/* ========================================= */
+/* SECCIÓN CAMBIOS Y DEVOLUCIONES            */
+/* ========================================= */
+
+.seccion-devoluciones {
+    padding: 80px 20px;
+    background-color: #ffffff; /* Fondo blanco limpio */
+    text-align: center;
+    max-width: 1100px;
+    margin: 0 auto; /* Centra toda la sección en la pantalla */
+}
+
+.devoluciones-encabezado h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.devoluciones-encabezado p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 40px;
+
+}
+/* CORRECCIÓN: Evitar que los puntos floten en los testimonios */
+.texto-testimonio .puntos {
+    position: static; /* Le quita el efecto flotante (absolute) del banner */
+    margin-top: 20px; /* Le da un espacio para separarlo del nombre del autor */
+}
+
+/* Contenedor de las tarjetas usando Flexbox */
+.contenedor-pasos {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px; /* Espacio entre cada tarjeta */
+    margin-bottom: 40px;
+}
+.botnnegro {
+    background-color: #000000; /* Negro sólido como en tu imagen */
+    color: #ffffff;
+    border: 1px solid #000000;
+    padding: 12px;    
+    border-radius: 8px;
+}
+
+/* Estilo individual de cada tarjeta */
+.tarjeta-paso {
+    flex: 1; /* Hace que las tres tarjetas midan exactamente lo mismo */
+    padding: 40px 20px;
+    border: 1px solid #e0e0e0; /* Un borde gris muy sutil */
+    border-radius: 8px; /* Esquinas redondeadas, siguiendo tu estilo */
+    background-color: #c1c1c1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto hover: la tarjeta se eleva un poco al pasar el mouse */
+.tarjeta-paso:hover {
+    transform: translateY(-5px); /* Sube 5 pixeles */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05); /* Crea una sombra suave */
+    border-color: #000; /* El borde se pinta de negro */
+}
+
+/* Estilo de los íconos */
+.icono-paso {
+    font-size: 2.5rem;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.tarjeta-paso h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.tarjeta-paso p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+.devoluciones-accion {
+    margin-top: 20px;
+}
+
+.footer {
+    width: 100%;
+    margin: 0;
+    background-color: #151515;
+    border: none;
+
+}
+
+.enlaces-footer {
+    padding: 25px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px 40px;
+
+    border-bottom: 1px solid #a1a1a1;
+}
+
+.enlaces-footer a {
+    font-size: 13px;
+    transition: color 0.3s ease;
+    color: white;
+}
+
+.enlaces-footer a:hover {
+    color: #d89cac;
+}
+
+.redes-sociales {
+    padding: 24px;
+    text-align: center;
+}
+
+.redes-sociales p {
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: white;
+}
+
+.redes-sociales div {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.redes-sociales a {
+    font-size: 23px;
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.redes-sociales a:hover {
+    color: #d89cac;
+    transform: translateY(-3px);
+}
+
+.iconos-redes a {
+    color: white;
+}
+
+.copyright {
+    padding: 12px;
+    border-top: 1px solid #383838;
+
+    color: #7c7c7c;
+    font-size: 11px;
+    text-align: center;}
+
+
+
+
+
+/* ==============================
+DISEÑO PARA TABLETS
+============================== */
+
+@media (max-width: 1100px) {
+
+    .header {
+        flex-wrap: wrap;
+    }
+
+    .menu {
+        order: 3;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .productos {
+        grid-template-columns: repeat(3, minmax(180px, 1fr));
+    }
+
+}
+
+/* ==============================
+   DISEÑO PARA TABLETS PEQUEÑAS
+============================== */
+
+@media (max-width: 850px) {
+
+    .contenedor-tienda {
+        grid-template-columns: 1fr;
+    }
+
+    .filtros {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .productos {
+        grid-template-columns: repeat(2, minmax(160px, 1fr));
+    }
+
+}
+
+/* ==============================
+   DISEÑO PARA CELULARES
+============================== */
+
+@media (max-width: 600px) {
+
+    .header {
+        padding: 16px 20px;
+    }
+
+    .logo img {
+        width: 120px;
+    }
+
+    .menu {
+        gap: 12px 18px;
+    }
+
+    .menu a {
+        font-size: 12px;
+    }
+
+    .acciones {
+        gap: 14px;
+    }
+
+    .contenido-principal {
+        width: 90%;
+        padding-top: 30px;
+    }
+
+    .contenido-principal h1 {
+        margin-bottom: 25px;
+        font-size: 25px;
+    }
+
+    .filtros {
+        grid-template-columns: 1fr;
+    }
+
+    .ordenar {
+        width: 100%;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .ordenar select {
+        width: 100%;
+    }
+
+    .productos {
+        grid-template-columns: 1fr;
+    }
+
+    .contenedor-imagen {
+        height: 380px;
+    }
+
+    .enlaces-footer {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .imagen-modal-bootstrap {
+        height: 320px;
+    }
+
+    .encabezado-modal-producto h2 {
+        font-size: 23px;
+    }
+}
+    

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="img/png" sizes="32x32" href="/TRABAJO EF COMPAÑEROS/img/logo1.png">
+    
+    <title>Detalle del producto</title>
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="estiloPromociones.css" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+
+        <a href="#" class="logo">
+            <img src="/TRABAJO EF COMPAÑEROS/img/logo.svg" alt="Logo de la tienda">
+        </a>
+
+        <nav class="menu">
+            <a href="/PROYECTO FINAL CÓDIGO COMPLETO/inicio/inicio.html" >Inicio</a>
+            <a href="/PROYECTO FINAL CÓDIGO COMPLETO/ropa/ropa.html">Ropa</a>
+            <a href="/PROYECTO FINAL CÓDIGO COMPLETO/Accesorios Jorly/accesorios.html">Accesorios</a>
+            <a href="/PROYECTO FINAL CÓDIGO COMPLETO/Promociones/Promociones.html"class="activo">Promociones</a>
+            <a href="/PROYECTO FINAL CÓDIGO COMPLETO/Contacto/Contacto.html">Contacto</a>
+        </nav>
+
+        <div class="acciones">
+            <button type="button" aria-label="Buscar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+            <button type="button" aria-label="Mi cuenta">
+                <i class="fa-regular fa-user"></i>
+            </button>
+
+            <button type="button" aria-label="Carrito de compras">
+                <i class="fa-solid fa-bag-shopping"></i>
+            </button>
+        </div>
+
+    </header>
+
+    <nav class="migas-pan">
+        <a href="promociones.html">Promociones</a> &gt; <span id="miga-nombre">Producto</span>
+    </nav>
+
+    <section class="detalle-producto container-fluid">
+        <div class="row g-4">
+
+            <div class="col-12 col-md-6">
+                <img id="detalle-imagen" src="img/placeholder.jpg" alt="Imagen del producto" class="img-fluid detalle-img-principal">
+            </div>
+
+            <div class="col-12 col-md-6 detalle-info">
+                <p class="categoria" id="detalle-categoria">CATEGORÍA</p>
+                <h1 id="detalle-nombre">Nombre del producto</h1>
+
+                <p class="precios precios-detalle">
+                    <span class="precio-anterior" id="detalle-precio-anterior"></span>
+                    <span class="precio-actual" id="detalle-precio-actual"></span>
+                </p>
+
+                <p class="descripcion" id="detalle-descripcion">
+                    Descripción del producto.
+                </p>
+
+                <div class="selector-talla">
+                    <label for="talla">Talla:</label>
+                    <select id="talla">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                </div>
+
+                <button class="btn-agregar-carrito">Agregar al carrito</button>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+
+        <div class="enlaces-footer">
+            <a href="#">Nuestra historia</a>
+            <a href="#">Políticas de envío</a>
+            <a href="#">Políticas de devoluciones</a>
+            <a href="#">Términos y condiciones</a>
+            <a href="#">Preguntas frecuentes</a>
+            <a href="#">Libro de Reclamaciones</a>
+        </div>
+
+        <div class="redes-sociales">
+            <p>Síguenos:</p>
+
+            <div class="iconos-redes">
+                <a href="#" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+
+                <a href="#" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="#" aria-label="TikTok">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+            </div>
+        </div>
+
+        <p class="copyright">
+            © 2026 Kamesch - Derechos reservados
+        </p>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // ============================================================
+        // BASE DE DATOS DE PRODUCTOS (ejemplo)
+        // Cuando tengas tus productos reales, agrega aquí un objeto
+        // por cada "id" que uses en los enlaces producto.html?id=X
+        // ============================================================
+        const productos = {
+            1: {
+                nombre: "Blusa de seda cuello V",
+                categoria: "BLUSAS",
+                imagen: "IMGS/blusa.jpg",
+                precioAnterior: "S/130.00",
+                precioActual: "S/ 65.00",
+                descripcion: "Blusa de seda con cuello en V, corte ajustado y caída fluida. Ideal para looks casuales o de oficina."
+            },
+            2: {
+                nombre: "Collar Minimalista Dorado",
+                categoria: "JOYERÍA",
+                imagen: "IMGS/colarrrrr.jpg",
+                precioAnterior: "S/30.77",
+                precioActual: "S/ 20.00",
+                descripcion: "Collar de diseño minimalista bañado en oro, perfecto para combinar con cualquier outfit."
+            },
+            3: {
+                nombre: "Casaca denim básica",
+                categoria: "SACOS / CASACAS",
+                imagen: "IMGS/casacaaaa.jpg",
+                precioAnterior: "S/120.00",
+                precioActual: "S/ 90.00",
+                descripcion: "Casaca de denim clásica, versátil y resistente, un básico infaltable en tu armario."
+            },
+            4: {
+                nombre: "Aretes de argolla gruesa",
+                categoria: "JOYERÍA",
+                imagen: "IMGS/aretes gruesos.jpg",
+                precioAnterior: "S/50.00",
+                precioActual: "S/ 25.00",
+                descripcion: "Aretes de argolla gruesa, livianos y de uso diario, con acabado dorado."
+            }
+            // Agrega aquí el resto de tus productos reales: 5, 6, 7, 101, 102, etc.
+        };
+
+        // Lee el "id" desde la URL, ej: producto.html?id=2
+        const parametros = new URLSearchParams(window.location.search);
+        const idProducto = parametros.get('id');
+        const producto = productos[idProducto];
+
+        if (producto) {
+            document.getElementById('detalle-imagen').src = producto.imagen;
+            document.getElementById('detalle-imagen').alt = producto.nombre;
+            document.getElementById('detalle-categoria').textContent = producto.categoria;
+            document.getElementById('detalle-nombre').textContent = producto.nombre;
+            document.getElementById('detalle-precio-anterior').textContent = producto.precioAnterior;
+            document.getElementById('detalle-precio-actual').textContent = producto.precioActual;
+            document.getElementById('detalle-descripcion').textContent = producto.descripcion;
+            document.getElementById('miga-nombre').textContent = producto.nombre;
+        } else {
+            document.getElementById('detalle-nombre').textContent = "Producto no encontrado";
+            document.getElementById('detalle-descripcion').textContent = "Verifica el enlace o agrega este producto al objeto 'productos' en el script.";
+        }
+    </script>
+</body>
+</html>

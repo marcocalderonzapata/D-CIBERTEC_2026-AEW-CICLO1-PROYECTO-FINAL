@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Muestra el sitio según el dispositivo del usuario -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Icono pequeño en la pestaña del sitio -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/logo1.png">
+    <title>Kamesch</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Archivo de estilos -->
+    <link rel="stylesheet" href="styles-ropa.css">
+
+    <!-- Iconos de Font Awesome -->
+    <script src="https://kit.fontawesome.com/4b2c032d6d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- Encabezado -->
+    <header class="header">
+
+        <a href="../inicio/inicio.html" class="logo">
+            <img src="img/logo.svg" alt="Logo de la tienda">
+        </a>
+
+        <nav class="menu">
+            <a href="/PROYECTO FINAL CÓDIGO COMPLETO/inicio/inicio.html" >Inicio</a>
+            <a href="/PROYECTO FINAL CÓDIGO COMPLETO/ropa/ropa.html" class="activo">Ropa</a>
+            <a href="/PROYECTO FINAL CÓDIGO COMPLETO/Accesorios Jorly/accesorios.html">Accesorios</a>
+            <a href="/PROYECTO FINAL CÓDIGO COMPLETO/Promociones/Promociones.html">Promociones</a>
+            <a href="/PROYECTO FINAL CÓDIGO COMPLETO/Contacto/Contacto.html">Contacto</a>
+        </nav>
+
+        <div class="acciones">
+            <button type="button" aria-label="Buscar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+            <button type="button" aria-label="Mi cuenta">
+                <i class="fa-regular fa-user"></i>
+            </button>
+
+            <button type="button" aria-label="Carrito de compras">
+                <i class="fa-solid fa-bag-shopping"></i>
+            </button>
+        </div>
+
+    </header>
+
+    <main class="contenido-principal">
+
+        <h1>Ropa</h1>
+
+        <div class="contenedor-tienda">
+
+            <!-- Barra lateral de filtros -->
+            <aside class="filtros">
+
+                <section class="grupo-filtro">
+                    <h2>
+                        Categoría
+                        <i class="fa-solid fa-chevron-up"></i>
+                    </h2>
+
+                    <div class="opciones-filtro">
+                        <label>
+                            <input type="checkbox" class="filtro-categoria" value="chompas">
+                            Chompas
+                        </label>
+
+                        <label>
+                            <input type="checkbox" class="filtro-categoria" value="capas">
+                            Capas
+                        </label>
+
+                        <label>
+                            <input type="checkbox" class="filtro-categoria" value="blusas">
+                            Blusas
+                        </label>
+
+                        <label>
+                            <input type="checkbox" class="filtro-categoria" value="polos">
+                            Polos
+                        </label>
+
+                        <label>
+                            <input type="checkbox" class="filtro-categoria" value="faldas">
+                            Faldas
+                        </label>
+
+                        <label>
+                            <input type="checkbox" class="filtro-categoria" value="shorts">
+                            Shorts
+                        </label>
+
+                        <label>
+                            <input type="checkbox" class="filtro-categoria" value="pantalones">
+                            Pantalones
+                        </label>
+
+                        <label>
+                            <input type="checkbox" class="filtro-categoria" value="vestidos">
+                            Vestidos
+                        </label>
+                    </div>
+                </section>
+
+                <section class="grupo-filtro">
+                    <h2>
+                        Talla
+                        <i class="fa-solid fa-chevron-up"></i>
+                    </h2>
+
+                    <div class="opciones-filtro">
+                        <label>
+                            <input type="checkbox" class="filtro-talla" value="xs">
+                            Extra pequeña (XS)
+                        </label>
+
+                        <label>
+                            <input type="checkbox" class="filtro-talla" value="s">
+                            Pequeña / Small (S)
+                        </label>
+
+                        <label>
+                            <input type="checkbox" class="filtro-talla" value="m">
+                            Mediana (M)
+                        </label>
+
+                        <label>
+                            <input type="checkbox" class="filtro-talla" value="l">
+                            Grande / Large (L)
+                        </label>
+
+                        <label>
+                            <input type="checkbox" class="filtro-talla" value="xl">
+                            Extra grande (XL)
+                        </label>
+
+                        <label>
+                            <input type="checkbox" class="filtro-talla" value="30">
+                            30
+                        </label>
+
+                        <label>
+                            <input type="checkbox" class="filtro-talla" value="32">
+                            32
+                        </label>
+
+                        <label>
+                            <input type="checkbox" class="filtro-talla" value="34">
+                            34
+                        </label>
+
+                        <label>
+                            <input type="checkbox" class="filtro-talla" value="36">
+                            36
+                        </label>
+
+                    </div>
+                </section>
+
+            </aside>
+
+            <!-- Productos -->
+            <section class="seccion-productos">
+
+                <div class="ordenar">
+                    <label for="orden">Ordenar por:</label>
+
+                    <select id="orden">
+                        <option value="">Seleccionar</option>
+                        <option value="menor-precio">Precio: menor a mayor</option>
+                        <option value="mayor-precio">Precio: mayor a menor</option>
+                        <option value="antigua-fecha">Fecha: antiguo(a) a reciente</option>
+                        <option value="reciente-fecha">Fecha: reciente a antiguo(a)</option>
+                    </select>
+                </div>
+
+                <div class="productos">
+
+                    <!-- Producto 1 -->
+                    <article class="producto" data-categoria="chompas" data-talla="m" data-precio="25" data-fecha="2026-06-01" data-descripcion="Chompa tejida para mujer en tono mostaza, con cuello redondo, mangas largas y corte recto. Una prenda cálida y versátil, ideal para looks casuales.">
+                        <div class="contenedor-imagen">
+                            <img src="img/chompa1.png">
+
+                        </div>
+
+                        <div class="informacion-producto">
+                            <h3>Chompa Mango</h3>
+                            <p>Talla: M</p>
+                            <p class="precio">S/. 25.00</p>
+
+                        </div>
+                    </article>
+
+                    <!-- Producto 2 -->
+                    <article class="producto" data-categoria="shorts" data-talla="32" data-precio="10" data-fecha="2026-06-02" data-descripcion="Short deportivo negro para mujer, de corte holgado, cintura elástica y diseño cómodo para entrenar o usar a diario.">
+                        <div class="contenedor-imagen">
+                            <img src="img/short1.png">
+
+                        </div>
+
+                        <div class="informacion-producto">
+                            <h3>Short New balance</h3>
+                            <p>Talla: 32</p>
+                            <p class="precio">S/. 10.00</p>
+
+                        </div>
+                    </article>
+
+                    <!-- Producto 3 -->
+                    <article class="producto"data-categoria="blusas" data-talla="s" data-precio="18" data-fecha="2026-06-03" data-descripcion="Blusa semitransparente para mujer en tono gris, con escote en V y mangas acampanadas. Su diseño fluido y elegante es ideal para combinar con prendas formales o casuales.">
+                        <div class="contenedor-imagen">
+                            <img src="img/blusa1.png">
+
+                        </div>
+
+                        <div class="informacion-producto">
+                            <h3>Blusa Holy moly</h3>
+                            <p>Talla: S</p>
+                            <p class="precio">S/. 18.00</p>
+
+                        </div>
+                    </article>
+
+                    <!-- Producto 4 -->
+                    <article class="producto" data-categoria="polos" data-talla="l" data-precio="15" data-fecha="2026-06-04" data-descripcion="Polo para mujer en tono terracota, con escote en V, mangas cortas y corte relajado. Una prenda cómoda y versátil, ideal para looks casuales de uso diario.">
+                        <div class="contenedor-imagen">
+                            <img src="img/polo1.png">
+
+                        </div>
+
+                        <div class="informacion-producto">
+                            <h3>Polo gap</h3>
+                            <p>Talla: L</p>
+                            <p class="precio">S/. 15.00</p>
+
+                        </div>
+                    </article>
+
+                    <!-- Producto 5 -->
+                    <article class="producto" data-categoria="faldas" data-talla="xs" data-precio="22" data-fecha="2026-06-05"data-descripcion="Falda corta negra para mujer, de corte recto y cintura alta con detalle de cordones. Una prenda moderna y versátil, ideal para combinar en looks casuales o elegantes.">
+                        <div class="contenedor-imagen">
+                            <img src="img/falda1.png">
+
+                        </div>
+
+                        <div class="informacion-producto">
+                            <h3>Falda syg</h3>
+                            <p>Talla: XS</p>
+                            <p class="precio">S/. 22.00</p>
+
+                        </div>
+                    </article>
+
+                    <!-- Producto 6 -->
+                    <article class="producto" data-categoria="capas" data-talla="s" data-precio="20" data-fecha="2026-06-06" data-descripcion="Capa negra para mujer con adornos dorados, diseño abierto y caída asimétrica. Una prenda elegante y versátil, ideal para complementar looks casuales o sofisticados.">
+                        <div class="contenedor-imagen">
+                            <img src="img/capa1.png">
+
+                        </div>
+
+                        <div class="informacion-producto">
+                            <h3>Capa topitop</h3>
+                            <p>Talla: S</p>
+                            <p class="precio">S/. 20.00</p>
+
+                        </div>
+                    </article>
+
+                    <!-- Producto 7 -->
+                    <article class="producto" data-categoria="pantalones" data-talla="30" data-precio="25" data-fecha="2026-06-07" data-descripcion="Pantalón para mujer en color verde oscuro, de corte recto y cintura alta. Una prenda moderna y versátil, ideal para looks casuales de uso diario.">
+                        <div class="contenedor-imagen">
+                            <img src="img/pantalon1.png">
+
+                        </div>
+
+                        <div class="informacion-producto">
+                            <h3>Pantalón denim lab</h3>
+                            <p>Talla: 30</p>
+                            <p class="precio">S/. 25.00</p>
+
+                        </div>
+                    </article>
+
+                    <!-- Producto 8 -->
+                    <article class="producto" data-categoria="vestidos" data-talla="xl" data-precio="30" data-fecha="2026-06-08" data-descripcion="Vestido corto estampado en tonos vino y verde, con cuello redondo y mangas largas. Su diseño fluido y llamativo es ideal para ocasiones casuales o semi-formales.">
+                        <div class="contenedor-imagen">
+                            <img src="img/vestido1.png">
+
+                        </div>
+
+                        <div class="informacion-producto">
+                            <h3>Vestido inside</h3>
+                            <p>Talla: XL</p>
+                            <p class="precio">S/. 30.00</p>
+
+                        </div>
+                    </article>
+
+                    <!-- Producto 9 -->
+                    <article class="producto" data-categoria="chompas" data-talla="xl" data-precio="30" data-fecha="2026-06-09" data-descripcion="Chompa tejida para mujer en color rosa, con cuello redondo, mangas largas y corte clásico. Una prenda cálida y versátil, ideal para looks casuales de temporada.">
+                        <div class="contenedor-imagen">
+                            <img src="img/chompa2.png">
+
+                        </div>
+
+                        <div class="informacion-producto">
+                            <h3>Chompa claire</h3>
+                            <p>Talla: XL</p>
+                            <p class="precio">S/. 30.00</p>
+
+                        </div>
+                    </article>
+
+                    <!-- Producto 10 -->
+                    <article class="producto" data-categoria="shorts" data-talla="34" data-precio="15" data-fecha="2026-06-10" data-descripcion="Short para mujer en color naranja, con tiro medio y bolsillos clásicos. Una prenda fresca y versátil, ideal para looks casuales de temporada.">
+                        <div class="contenedor-imagen">
+                            <img src="img/short2.png">
+
+                        </div>
+
+                        <div class="informacion-producto">
+                            <h3>Short in france</h3>
+                            <p>Talla: 34</p>
+                            <p class="precio">S/. 15.00</p>
+
+                        </div>
+                    </article>
+
+                    <!-- Producto 11 -->
+                    <article class="producto" data-categoria="blusas" data-talla="m" data-precio="20" data-fecha="2026-06-11" data-descripcion="Blusa estampada para mujer en tono mostaza, con escote en V, mangas largas y ajuste en el centro. Su diseño femenino y llamativo es ideal para looks casuales o semi-formales.">
+                        <div class="contenedor-imagen">
+                            <img src="img/blusa2.png">
+
+                        </div>
+
+                        <div class="informacion-producto">
+                            <h3>Blusa gysies</h3>
+                            <p>Talla: M</p>
+                            <p class="precio">S/. 20.00</p>
+
+                        </div>
+                    </article>
+
+                    <!-- Producto 12 -->
+                    <article class="producto" data-categoria="polos" data-talla="xs" data-precio="10" data-fecha="2026-06-12" data-descripcion="Polo sin mangas para mujer en tono coral, con cuello redondo y corte entallado. Una prenda sencilla y versátil, ideal para looks casuales y frescos.">
+                        <div class="contenedor-imagen">
+                            <img src="img/polo2.png">
+
+                        </div>
+
+                        <div class="informacion-producto">
+                            <h3>Polo escape</h3>
+                            <p>Talla: XS</p>
+                            <p class="precio">S/. 10.00</p>
+
+                        </div>
+                    </article>
+
+                    <!-- Producto 13 -->
+                    <article class="producto" data-categoria="faldas" data-talla="m" data-precio="18" data-fecha="2026-06-13" data-descripcion="Falda corta de pana para mujer en color verde oliva, con botones frontales y bolsillos amplios. Una prenda casual y moderna, ideal para combinar con blusas o suéteres.">
+                        <div class="contenedor-imagen">
+                            <img src="img/falda2.png">
+
+                        </div>
+
+                        <div class="informacion-producto">
+                            <h3>Falda index</h3>
+                            <p>Talla: M</p>
+                            <p class="precio">S/. 18.00</p>
+
+                        </div>
+                    </article>
+
+                    <!-- Producto 14 -->
+                    <article class="producto" data-categoria="capas" data-talla="l" data-precio="25" data-fecha="2026-06-14" data-descripcion="Capa estampada para mujer en tonos verdes y turquesa, con diseño abierto y mangas tres cuartos. Una prenda ligera y versátil, ideal para complementar looks casuales y frescos.">
+                        <div class="contenedor-imagen">
+                            <img src="img/capa2.png">
+
+                        </div>
+
+                        <div class="informacion-producto">
+                            <h3>Capa ly chic</h3>
+                            <p>Talla: L</p>
+                            <p class="precio">S/. 25.00</p>
+
+                        </div>
+                    </article>
+
+                    <!-- Producto 15 -->
+                    <article class="producto" data-categoria="pantalones" data-talla="36" data-precio="15" data-fecha="2026-06-15" data-descripcion="Pantalón para mujer en color negro con rayas verticales blancas, cintura alta y lazo ajustable. Su corte recto y moderno es ideal para looks casuales o de oficina.">
+                        <div class="contenedor-imagen">
+                            <img src="img/pantalon2.png">
+
+                        </div>
+
+                        <div class="informacion-producto">
+                            <h3>Pantalón university</h3>
+                            <p>Talla: 36</p>
+                            <p class="precio">S/. 15.00</p>
+
+                        </div>
+                    </article>
+
+                    <!-- Producto 16 -->
+                    <article class="producto" data-categoria="vestidos" data-talla="s" data-precio="20" data-fecha="2026-06-16" data-descripcion="Vestido blanco sin mangas para mujer, con estampado floral en tonos azules y verdes. Su corte fluido y fresco es ideal para looks casuales y días cálidos.">
+                        <div class="contenedor-imagen">
+                            <img src="img/vestido2.png">
+
+                        </div>
+
+                        <div class="informacion-producto">
+                            <h3>Vestido importado</h3>
+                            <p>Talla: S</p>
+                            <p class="precio">S/. 20.00</p>
+
+                        </div>
+                    </article>
+
+                </div>
+
+                <!-- Paginación -->
+                <nav class="paginacion" aria-label="Paginación de productos">
+                    <a href="#" aria-label="Página anterior">
+                        <i class="fa-solid fa-angles-left"></i>
+                    </a>
+
+                    <a href="#" class="pagina-activa">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <span>...</span>
+                    <a href="#">10</a>
+
+                    <a href="#" aria-label="Página siguiente">
+                        <i class="fa-solid fa-angles-right"></i>
+                    </a>
+                </nav>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- Modal de Bootstrap -->
+    <div class="modal fade" id="modal-producto-bootstrap" tabindex="-1" aria-labelledby="modal-nombre-bootstrap"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+
+            <div class="modal-content">
+
+                <div class="modal-body">
+
+                    <div class="row g-4">
+
+                        <div class="col-md-5">
+                            <img id="modal-imagen-bootstrap" src="" class="img-fluid w-100 imagen-modal-bootstrap"
+                                alt="Producto seleccionado">
+                        </div>
+
+                        <div class="col-md-7">
+
+                            <div class="encabezado-modal-producto">
+
+                                <h2 id="modal-nombre-bootstrap" class="fw-bold">
+                                    Nombre del producto
+                                </h2>
+
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Cerrar"></button>
+
+                            </div>
+                            <p id="modal-precio-bootstrap" class="fs-4 mb-4">
+                                S/. 0.00
+                            </p>
+
+                            <div class="d-flex gap-4 mb-3">
+                                <strong>Talla:</strong>
+
+                                <span id="modal-talla-bootstrap" class="text-secondary">
+                                    M
+                                </span>
+                            </div>
+
+                            <p id="modal-descripcion-bootstrap" class="text-secondary mb-4">
+                                Descripción del producto.
+                            </p>
+
+                            <button type="button" class="btn btn-outline-dark w-100" id="agregar-bootstrap">
+                                <i class="fa-solid fa-bag-shopping me-2"></i>
+                                Añadir al carrito
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+
+        <div class="enlaces-footer">
+            <a href="#">Nuestra historia</a>
+            <a href="#">Políticas de envío</a>
+            <a href="#">Políticas de devoluciones</a>
+            <a href="#">Términos y condiciones</a>
+            <a href="#">Preguntas frecuentes</a>
+            <a href="#">Libro de Reclamaciones</a>
+        </div>
+
+        <div class="redes-sociales">
+            <p>Síguenos:</p>
+
+            <div class="iconos-redes">
+                <a href="#" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+
+                <a href="#" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="#" aria-label="TikTok">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+            </div>
+        </div>
+
+        <p class="copyright">
+            © 2026 Kamesch - Derechos reservados
+        </p>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="script-bootstrap-ropa.js"></script>
+</body>
+
+</html>

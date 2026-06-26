@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/PROYECTO FINAL CÓDIGO COMPLETO/inicio/imagenes/logo1.png">
+    <title>Kamesch</title>
+
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4b2c032d6d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+
+        <a href="/PROYECTO FINAL CÓDIGO COMPLETO/inicio/inicio.html" class="logo">
+            <img src="/PROYECTO FINAL CÓDIGO COMPLETO/inicio/imagenes/logo.svg" alt="Logo de la tienda">
+        </a>
+
+        <nav class="menu">
+            <a href="/PROYECTO FINAL CÓDIGO COMPLETO/inicio/inicio.html" class="activo">Inicio</a>
+            <a href="/PROYECTO FINAL CÓDIGO COMPLETO/ropa/ropa.html" >Ropa</a>
+            <a href="/PROYECTO FINAL CÓDIGO COMPLETO/Accesorios Jorly/accesorios.html">Accesorios</a>
+            <a href="/PROYECTO FINAL CÓDIGO COMPLETO/Promociones/Promociones.html">Promociones</a>
+            <a href="/PROYECTO FINAL CÓDIGO COMPLETO/Contacto/Contacto.html">Contacto</a>
+        </nav>
+
+        <div class="acciones">
+            <button type="button" aria-label="Buscar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+            <button type="button" aria-label="Mi cuenta">
+                <i class="fa-regular fa-user"></i>
+            </button>
+
+            <button type="button" aria-label="Carrito de compras">
+                <i class="fa-solid fa-bag-shopping"></i>
+            </button>
+        </div>
+
+    </header>
+        <main>
+            <div class="baner" id="miBanner">
+                <button class="flecha flecha-izq" id="btnIzq">&#10094;</button>
+
+                <div class="banertext">
+                    <span class="badge">NUEVA TEMPORADA 2026</span>
+                    <h1>Eleva tu estilo todos los dias</h1>
+                    <p>Descubre nuestra nueva colección de ropa y accesorios exclusivos para ti.</p>
+                    <div class="banerbotones">
+                        <a href="/PROYECTO FINAL CÓDIGO COMPLETO/ropa/ropa.html" class="btnnegro">Ver ropa</a>
+                        <a href="/PROYECTO FINAL CÓDIGO COMPLETO/Accesorios Jorly/accesorios.html" class="btnblanco">Ver accesorios</a>
+                    </div>
+                </div>
+
+                <button class="flecha flecha-der" id="btnDer">&#10095;</button>
+
+                <div class="puntos">
+                    <span class="punto activo"></span>
+                    <span class="punto"></span>
+                    <span class="punto"></span>
+                </div>
+            </div>
+        
+                <div class="catalogo">
+                    <h2>Últimas Tendencias</h2>
+                        <div class="vermascaja">
+                        <a  class="vermas" href="/PROYECTO FINAL CÓDIGO COMPLETO/ropa/ropa.html">ver más 
+                        <img src="/PROYECTO FINAL CÓDIGO COMPLETO/inicio/imagenes/ver mas.svg" alt="ver mas">
+                        </a>
+                        </div> 
+                        <div class="catalogoimg">
+                            <div class="catalogocard">
+                                <img class="cataloitem" src="/PROYECTO FINAL CÓDIGO COMPLETO/inicio/imagenes/chompa clarie.png" alt="chompa">
+                                <div class="catalotext">
+                                <p>Chompa claire</p>
+                                <p> S/30.00</p>
+                                </div>
+                            </div>
+                        
+                            <div class="catalogocard">
+                            <img class="cataloitem" src="/PROYECTO FINAL CÓDIGO COMPLETO/inicio/imagenes/pantalon1.png" alt="pantalon">
+                            <div class="catalotext">
+                                <p>Pantalón denim lab</p>
+                                <p> S/25.00</p>
+                            </div>
+                        </div>
+                        <div class="catalogocard">
+                            <img class="cataloitem"  src="/PROYECTO FINAL CÓDIGO COMPLETO/inicio/imagenes/short2.png" alt="short">
+                            <div   class="catalotext">
+                                <p>Short in france</p>
+                                <p> S/15.00</p>
+                            </div>
+                        </div>
+                        <div class="catalogocard">
+                            <img class="cataloitem" src="/PROYECTO FINAL CÓDIGO COMPLETO/inicio/imagenes/vestido2.png" alt="vestido">
+                            <div class="catalotext">
+                                <p>Vestido importado</p>
+                                <p> S/20.00</p>
+                            </div>
+                        </div>
+                    
+                </div>
+            <h2>Lo que opinan nuestras clientas</h2>
+            <section class="contenedor-testimonios">
+            <button class="flecha-testimonio" id="btnIzqTest">&#10094;</button>
+
+            <div class="tarjeta-testimonio">
+                
+                <div class="imagen-testimonio">
+                    <img id="imgTestimonio" src="/PROYECTO FINAL CÓDIGO COMPLETO/inicio/imagenes/opinion.png" alt="Foto del cliente" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                
+                <div class="texto-testimonio">
+                    <h3 id="tituloTestimonio">"¡Me encantó la calidad!"</h3>
+                    <p id="textoTestimonio">Compré un par de blusas y la tela es súper suave, no se deforma para nada después de las lavadas. Tenía un poco de duda con la talla, pero me guie de su tabla y me quedaron perfectas. ¡Definitivamente voy a volver a pedir!</p>
+                    <span class="autor" id="autorTestimonio">— Valentina R.</span>
+                    
+                    <div class="puntos">
+                        <span class="punto activo"></span>
+                        <span class="punto"></span>
+                        <span class="punto"></span>
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="flecha-testimonio" id="btnDerTest">&#10095;</button>
+            </section>
+            <section class="seccion-devoluciones">
+            <div class="devoluciones-encabezado">
+                <h2>Cambios y Devoluciones</h2>
+                <p>Queremos que ames lo que compras. Si no es así, hacer un cambio es súper sencillo.</p>
+            </div>
+
+            <div class="contenedor-pasos">
+                <div class="tarjeta-paso">
+                    <i class="fa-solid fa-calendar-days icono-paso"></i>
+                    <h3>1. Tienes 30 días</h3>
+                    <p>Dispones de hasta 30 días desde que recibes tu pedido para solicitar un cambio de talla o una devolución.</p>
+                </div>
+
+                <div class="tarjeta-paso">
+                    <i class="fa-solid fa-shirt icono-paso"></i>
+                    <h3>2. Condición de la prenda</h3>
+                    <p>Los artículos deben estar sin uso. Las prendas, ya sean de Algodón ST, Rib ST o cualquier otra tela, deben conservar sus etiquetas originales.</p>
+                </div>
+
+                <div class="tarjeta-paso">
+                    <i class="fa-solid fa-box-open icono-paso"></i>
+                    <h3>3. Envío y Reembolso</h3>
+                    <p>Empaca las prendas, envíanos el paquete y en cuanto lo revisemos, procesaremos tu cambio o reembolso rápidamente.</p>
+                </div>
+            </div>
+
+                <div class="devoluciones-accion">
+                    <a href="#" class="botnnegro">Ver políticas completas</a>
+                </div>
+            </section>
+                </div>
+        </main>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+
+        <div class="enlaces-footer">
+            <a href="#">Nuestra historia</a>
+            <a href="#">Políticas de envío</a>
+            <a href="#">Políticas de devoluciones</a>
+            <a href="#">Términos y condiciones</a>
+            <a href="#">Preguntas frecuentes</a>
+            <a href="#">Libro de Reclamaciones</a>
+        </div>
+
+        <div class="redes-sociales">
+            <p>Síguenos:</p>
+
+            <div class="iconos-redes">
+                <a href="https://web.facebook.com/cibertecoficial/?locale=es_LA&_rdc=1&_rdr#" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+
+                <a href="#" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="#" aria-label="TikTok">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+            </div>
+        </div>
+
+        <p class="copyright">
+            © 2026 Kamesch - Derechos reservados
+        </p>
+
+    </footer>
+
+    
+<script src="/PROYECTO FINAL CÓDIGO COMPLETO/inicio/script.js"></script>
+</body>
+</html>

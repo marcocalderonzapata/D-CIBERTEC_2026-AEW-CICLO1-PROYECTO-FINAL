@@ -1,0 +1,198 @@
+const productos = document.querySelectorAll(".producto");
+const contenedorProductos = document.querySelector(".productos");
+const selectOrden = document.getElementById("orden");
+
+const elementoModal = document.getElementById(
+    "modal-producto-bootstrap"
+);
+
+
+// Creamos el controlador del modal de Bootstrap
+const modalBootstrap = new bootstrap.Modal(elementoModal);
+
+// Información de la ventana//
+const modalImagen = document.getElementById(
+    "modal-imagen-bootstrap"
+);
+
+const modalNombre = document.getElementById(
+    "modal-nombre-bootstrap"
+);
+
+const modalPrecio = document.getElementById(
+    "modal-precio-bootstrap"
+);
+
+const modalTalla = document.getElementById(
+    "modal-talla-bootstrap"
+);
+
+const modalDescripcion = document.getElementById(
+    "modal-descripcion-bootstrap"
+);
+
+const botonAgregar = document.getElementById(
+    "agregar-bootstrap"
+);
+
+let productoSeleccionado = "";
+
+productos.forEach((producto) => {
+
+    producto.addEventListener("click", () => {
+
+        const imagen = producto.querySelector("img");
+        const nombre = producto.querySelector("h3");
+        const precio = producto.querySelector(".precio");
+        modalImagen.src = imagen.src;
+        modalImagen.alt = imagen.alt;
+
+        modalNombre.textContent = nombre.textContent;
+        modalPrecio.textContent = precio.textContent;
+
+        // Usamos directamente el atributo data-talla del HTML
+        modalTalla.textContent = producto.dataset.talla.toUpperCase();
+
+        modalDescripcion.textContent =
+            producto.dataset.descripcion;
+        ).trim();
+
+        modalDescripcion.textContent =
+            producto.dataset.descripcion;
+
+        productoSeleccionado = nombre.textContent;
+
+        // Abrimos el modal
+        modalBootstrap.show();
+    });
+
+});
+
+botonAgregar.addEventListener("click", () => {
+    modalBootstrap.hide();
+});
+
+
+// FILTRADO POR CATEGORÍA Y TALLA
+
+
+// Seleccionamos los checkboxes de categorías
+const filtrosCategoria = document.querySelectorAll(
+    ".filtro-categoria"
+);
+
+// Seleccionamos los checkboxes de tallas
+const filtrosTalla = document.querySelectorAll(
+    ".filtro-talla"
+);
+
+function filtrarProductos() {
+
+    // Categorías que están marcadas
+    const categoriasSeleccionadas = Array.from(
+        filtrosCategoria
+    )
+        .filter((checkbox) => checkbox.checked)
+        .map((checkbox) => checkbox.value);
+
+    // Tallas que están marcadas
+    const tallasSeleccionadas = Array.from(
+        filtrosTalla
+    )
+        .filter((checkbox) => checkbox.checked)
+        .map((checkbox) => checkbox.value);
+
+    productos.forEach((producto) => {
+
+        // Datos guardados en cada artículo
+        const categoriaProducto =
+            producto.dataset.categoria;
+
+        const tallaProducto =
+            producto.dataset.talla;
+
+        // Si no hay categorías marcadas,
+        // cualquier categoría es válida
+        const coincideCategoria =
+            categoriasSeleccionadas.length === 0 ||
+            categoriasSeleccionadas.includes(
+                categoriaProducto
+            );
+
+        // Si no hay tallas marcadas,
+        // cualquier talla es válida
+        const coincideTalla =
+            tallasSeleccionadas.length === 0 ||
+            tallasSeleccionadas.includes(
+                tallaProducto
+            );
+
+        // Se muestra solo si cumple ambos filtros
+        const debeMostrarse =
+            coincideCategoria && coincideTalla;
+
+        producto.classList.toggle(
+            "oculto",
+            !debeMostrarse
+        );
+    });
+}
+
+// Escuchamos los cambios en las categorías
+filtrosCategoria.forEach((checkbox) => {
+    checkbox.addEventListener(
+        "change",
+        filtrarProductos
+    );
+});
+
+// Escuchamos los cambios en las tallas
+filtrosTalla.forEach((checkbox) => {
+    checkbox.addEventListener(
+        "change",
+        filtrarProductos
+    );
+});
+
+
+// ORDENAR PRODUCTOS
+
+function ordenarProductos() {
+
+    const opcionSeleccionada = selectOrden.value;
+
+    const productosArray = Array.from(productos);
+
+    productosArray.sort((productoA, productoB) => {
+
+        const precioA = Number(productoA.dataset.precio);
+        const precioB = Number(productoB.dataset.precio);
+
+        const fechaA = new Date(productoA.dataset.fecha);
+        const fechaB = new Date(productoB.dataset.fecha);
+
+        if (opcionSeleccionada === "menor-precio") {
+            return precioA - precioB;
+        }
+
+        if (opcionSeleccionada === "mayor-precio") {
+            return precioB - precioA;
+        }
+
+        if (opcionSeleccionada === "antigua-fecha") {
+            return fechaA - fechaB;
+        }
+
+        if (opcionSeleccionada === "reciente-fecha") {
+            return fechaB - fechaA;
+        }
+
+        return 0;
+    });
+
+    productosArray.forEach((producto) => {
+        contenedorProductos.appendChild(producto);
+    });
+}
+
+selectOrden.addEventListener("change", ordenarProductos);
